@@ -1,5 +1,4 @@
 const keys = require("../config/keys");
-
 const API_KEY = keys.keys.api_key;
 const API_SECRET = keys.keys.api_secret;
 const BASE_URL = keys.keys.base_url;
@@ -21,10 +20,24 @@ module.exports.examInfo = async (req, res) => {
   }
 };
 
-module.exports.randomQuestion = (req, res) => {
-  let examId = req.body.examId;
-  return res.status(200).json({
-    message: "randomQuestion in examInfo controller called",
-    data: { API_KEY, API_SECRET, examId },
-  });
+module.exports.randomQuestion = async (req, res) => {
+  try {
+    let examId = req.body.examId;
+    let randomQuestionURL = BASE_URL + "random-question/";
+    let randomQuestionData = await axios({
+      method: "post",
+      url: randomQuestionURL,
+      data: {
+        api_key: API_KEY,
+        api_secret: API_SECRET,
+        examId: examId,
+      },
+    });
+    return res.status(200).json(randomQuestionData.data);
+  } catch (err) {
+    return res.status(500).json({
+      message: "Error",
+      data: err,
+    });
+  }
 };
