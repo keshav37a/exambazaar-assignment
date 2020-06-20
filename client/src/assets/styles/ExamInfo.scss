@@ -1,0 +1,48 @@
+#ExamInfoLinkContainer{
+    margin: 2rem 5rem 0rem 5rem;
+    flex-wrap: wrap;
+
+    .singleLinkContainer{
+        margin: 1rem;
+        background-color: #3d3d3d;
+        min-width: 20rem;
+        max-width: 20rem;
+        height: 15rem;
+        flex-wrap: nowrap;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        border-radius: 10px;
+        cursor: pointer;
+
+        .streamLogo{
+            padding: 1rem;
+            margin: 0rem auto 0rem auto;
+        }
+
+        .streamExamsContainer{
+            margin: 1rem;
+            padding: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nameText{
+            color: white;
+            margin: 0.25rem;
+            
+        }
+        .streamNameText{
+            margin: 0.25rem;
+            font-size: 1.25rem;
+        }
+    }
+
+    .singleLinkContainer:hover{
+        background-color: #2F2F2F;
+    }
+
+
+    .streamLogo{
+        height: 3rem;
+        width: 3rem;
+    }
+}

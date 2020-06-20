@@ -5,32 +5,32 @@ const Header = () => {
   return (
     <div className="ExamInfo-Header">
       <div className="container-top-logo flex-row-start">
-        <div class="flex-row-start grow link-container">
+        <div className="flex-row-start grow link-container">
           <a href="https://www.exambazaar.com/">
-            <span class="site-title">EXAMBAZAAR</span>
+            <span className="site-title">EXAMBAZAAR</span>
           </a>
           <a href="https://www.exambazaar.com/blog">
-            <span class="site-link-nav">Blogs</span>
+            <span className="site-link-nav">Blogs</span>
           </a>
           <a href="https://www.exambazaar.com/exam">
-            <span class="site-link-nav">Exams</span>
+            <span className="site-link-nav">Exams</span>
           </a>
           <a href="https://www.exambazaar.com/best-coaching-classes">
-            <span class="site-link-nav">Best Coachings</span>
+            <span className="site-link-nav">Best Coachings</span>
           </a>
           <a href="https://www.exambazaar.com/previous-year-question-papers-for-competitive-exams">
-            <span class="site-link-nav">Question Papers</span>
+            <span className="site-link-nav">Question Papers</span>
           </a>
           <a href="https://www.exambazaar.com/exam-question-a-day">
-            <span class="site-link-nav">EQAD</span>
+            <span className="site-link-nav">EQAD</span>
           </a>
           <a href="https://www.exambazaar.com/">
-            <span class="site-link-nav">Prep Tools</span>
+            <span className="site-link-nav">Prep Tools</span>
           </a>
         </div>
-        <div class="flex-row-start auto-mar link-container">
+        <div className="flex-row-start auto-mar link-container">
           <a href="https://www.exambazaar.com/">
-            <span class="site-link-nav">+Write</span>
+            <span className="site-link-nav">+Write</span>
           </a>
           <img
             className="icon"

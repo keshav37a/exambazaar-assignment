@@ -39,34 +39,3 @@
         line-height: 2rem;
     }
 }
-
-.flex-row-start{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-}
-
-.flex-row-center{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.grow{
-    flex-grow: 1;
-}
-
-.icon{
-    height: 1.5rem;
-    width: 1.5rem;
-    margin: 1rem 1rem 1rem 2rem;
-    
-}
-
-.profile{
-    height: 3rem;
-    width: 3rem;
-    vertical-align: middle;
-}
-
-
