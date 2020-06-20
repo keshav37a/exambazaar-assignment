@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import ExamService from '../services/examService';
-import '../styles/ExamInfo.scss'
 
 const ExamInfo = ()=>{
 
@@ -16,7 +15,7 @@ const ExamInfo = ()=>{
   }
 
   return (
-    <h1>Working</h1>
+    <div>Content</div>
   );
 }
 

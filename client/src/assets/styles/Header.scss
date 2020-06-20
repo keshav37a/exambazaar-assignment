@@ -1,0 +1,72 @@
+.ExamInfo-Header{
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    .container-top-logo{
+        a{
+            text-decoration: none;
+            margin: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+
+            .site-title{
+                color: #2DC7A0;
+                letter-spacing: 2px;
+            }
+
+            .site-link-nav{
+                font-size: 1rem;
+                color: #363533;
+                padding-bottom: 0.25rem;        
+            }
+    
+            .site-title:hover{
+                color: #363533;    
+            }
+        }
+    }
+
+    .heading-top{
+        font-size: 3rem;
+        text-align: center;
+        font-weight: 700;
+        color: #363533;
+        line-height: 5rem;
+        margin: 2rem 1rem 0.5rem 1rem;
+    }
+
+    .subheading-top{
+        font-size: 1.5rem;
+        color: gray;
+        line-height: 2rem;
+    }
+}
+
+.flex-row-start{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.flex-row-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.grow{
+    flex-grow: 1;
+}
+
+.icon{
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 1rem 1rem 1rem 2rem;
+    
+}
+
+.profile{
+    height: 3rem;
+    width: 3rem;
+    vertical-align: middle;
+}
+
+
