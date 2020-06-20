@@ -5,7 +5,6 @@ export default {
   getAllStreamInfo: async () =>{
     try{
         let res = await axios.get('/api/v1/coding-round/exam-info');
-        console.log(res);
         return {
             status: res.status,
             data: res.data
@@ -13,6 +12,10 @@ export default {
     }
     catch(err){
         console.log(err);
+        return {
+          status: 500,
+          data: []
+      }
     }
   },
 }
