@@ -22,16 +22,19 @@ module.exports.examInfo = async (req, res) => {
 
 module.exports.randomQuestion = async (req, res) => {
   try {
-    let examId = req.body.examId;
     let randomQuestionURL = BASE_URL + "random-question/";
+    let body = {};
+    body.api_key = API_KEY;
+    body.api_secret = API_SECRET;
+    body.examId = req.body.examId;
+    console.log(body);
+    if (req.body.questionId != undefined) 
+        body.questionId = req.body.questionId;
+
     let randomQuestionData = await axios({
       method: "post",
       url: randomQuestionURL,
-      data: {
-        api_key: API_KEY,
-        api_secret: API_SECRET,
-        examId: examId,
-      },
+      data: body,
     });
     return res.status(200).json(randomQuestionData.data);
   } catch (err) {
