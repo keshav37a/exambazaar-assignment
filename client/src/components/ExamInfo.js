@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ExamService from '../services/examService';
+import '../styles/ExamInfo.scss'
 
 const ExamInfo = ()=>{
 
