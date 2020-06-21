@@ -16,12 +16,19 @@ const ExamInfo = () => {
     console.log(streams);
   };
 
+  const handleNavigateOnPage = (section)=>{
+    console.log(section);
+    let newId = section+"Container";
+    console.log(newId);
+    document.getElementById(newId).scrollIntoView();
+  }
+
   return (
     <div id="examInfoContainer">
       <div id="examInfoLinkContainer" className="flex-row-center">
         {streams.map((stream, index) => {
           return (
-            <div className="singleLinkContainer flex-col-start">
+            <div className="singleLinkContainer flex-col-start" onClick={()=>handleNavigateOnPage(stream.name.replace(/\s/g,''))}>
               <img className="streamLogo" src={stream.logo.white}></img>
               <span className="nameText streamNameText flex-row-center">
                 {stream.name}
@@ -43,7 +50,7 @@ const ExamInfo = () => {
       <div id="examsContainer" className="flex-col-start">
         {streams.map((stream, index) => {
           return (
-            <div className="streamWiseExamContainer flex-col-start">
+            <div className="streamWiseExamContainer flex-col-start" id={stream.name.replace(/\s/g,'')+"Container"}>
               <div className="streamNameText">{stream.name}</div>
               <hr></hr>
               <div className="examsContainerWhole flex-row-start">
