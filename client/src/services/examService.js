@@ -21,7 +21,6 @@ export default {
     try {
       let body = {};
       body.examId = examId;
-      console.log('in examService: getRandomQuestion', examId);
       let res = await axios({
         method: "post",
         url: `/api/v1/coding-round/random-question/${examId}`,

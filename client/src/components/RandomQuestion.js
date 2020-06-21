@@ -3,10 +3,10 @@ import ExamService from "../services/examService";
 import "../assets/styles/RandomQuestion.scss";
 
 const RandomQuestion = (props) => {
-  console.log("InRandomQuestion");
-
-  let [changeVar, setChangeVar] = useState(0);
+  let [changeVar, setChangeVar] = useState();
   let [randomQuestion, setRandomQuestion] = useState({});
+  let [randomQuestionsArray, setRandomQuestionsArray] = useState([]);
+  let [index, setIndex] = useState(-1);
   let examId = props.location.state.examId;
 
   useEffect(() => {
@@ -15,13 +15,22 @@ const RandomQuestion = (props) => {
 
   const getRandomQuestionInfo = async () => {
     let randomQuestionData = await ExamService.getRandomQuestion(examId);
+    randomQuestionsArray.push(randomQuestionData.data);
     setRandomQuestion(randomQuestionData.data);
-    console.log(randomQuestionData.data);
+    if (index < 0) setIndex(0);
+    else setIndex(randomQuestionsArray.length - 1);
+    console.log(index);
+    console.log(randomQuestionsArray);
   };
 
-  let handlePrevQuestionLoad = ()=>{
-      
-  }
+  let handlePrevQuestionLoad = () => {
+    console.log(index);
+    if (index > 0) {
+      let randomQuestionData = randomQuestionsArray[index - 1];
+      setRandomQuestion(randomQuestionData);
+      setIndex(index - 1);
+    }
+  };
 
   let ExamSection = (props) => {
     let examSection = props.examSection;
@@ -47,7 +56,6 @@ const RandomQuestion = (props) => {
     let qIndex = props.qIndex;
     let opts = [];
     let type = props.type;
-    console.log(mcqma);
     if (type === "numerical") {
       return (
         <div className="singleOptionContainer">
@@ -91,13 +99,12 @@ const RandomQuestion = (props) => {
         );
       });
     }
-
     return opts;
   };
 
-  console.log(randomQuestion);
+  //   console.log(randomQuestion);
 
-  if (randomQuestion.question !== undefined) {
+  if (randomQuestion !== undefined && randomQuestion.question !== undefined) {
     return (
       <div id="randomQuestionContainer">
         <div className="flex-row-start">
@@ -105,8 +112,20 @@ const RandomQuestion = (props) => {
             {"EQAD " + randomQuestion.question.exam}
           </span>
           <div className="questionNavigationContainer inlBlc">
-            <button className="navButton" id="prevQuestionButton" onClick={handlePrevQuestionLoad}>{"<"}</button>
-            <button className="navButton" id="nextQuestionButton" onClick={getRandomQuestionInfo}>{">"}</button>
+            <button
+              className="navButton"
+              id="prevQuestionButton"
+              onClick={handlePrevQuestionLoad}
+            >
+              {"<"}
+            </button>
+            <button
+              className="navButton"
+              id="nextQuestionButton"
+              onClick={getRandomQuestionInfo}
+            >
+              {">"}
+            </button>
           </div>
         </div>
 
