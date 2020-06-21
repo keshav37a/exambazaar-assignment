@@ -1,6 +1,22 @@
 #randomQuestionContainer{
     margin: 2rem;
 
+    .navButton{
+        margin: 0.25rem 1rem 0.25rem 0rem;
+        padding: 0.25rem 1rem 0.25rem 1rem;
+        background-color: #29335c;
+        color: white;
+        font-family: 'Nunito', sans-serif;
+        border: none;
+        cursor: pointer;
+        border: 1px solid #29335c;
+    }
+
+    .navButton:hover{
+        background-color: white;
+        color: #29335c;
+    }
+
     .context{
         margin: 1rem 1rem 1rem 0rem;
         line-height: 2rem;

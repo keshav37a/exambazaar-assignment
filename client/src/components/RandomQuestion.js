@@ -19,31 +19,23 @@ const RandomQuestion = (props) => {
     console.log(randomQuestionData.data);
   };
 
-  let ExamSection = (props)=>{
+  let ExamSection = (props) => {
     let examSection = props.examSection;
-    if(examSection===undefined)
-        return <span></span>
-    else{
-        return(
-            <span className="examSectionText">
-                {" in " + examSection}
-            </span>
-        )
+    if (examSection === undefined) return <span></span>;
+    else {
+      return <span className="examSectionText">{" in " + examSection}</span>;
     }
-  }
+  };
 
-  let ImageOutsideQuestionsArr = (props)=>{
-    if(props.images===null){
-        return(<span></span>);
+  let ImageOutsideQuestionsArr = (props) => {
+    if (props.images === null) {
+      return <span></span>;
     }
-    let images = props.images.map((image, index)=>{
-        return(
-            <img key={index} alt="question-image" src={image}></img>
-        )
-    })
+    let images = props.images.map((image, index) => {
+      return <img key={index} alt="question-image" src={image}></img>;
+    });
     return images;
-  }
-
+  };
 
   let RenderInputTypeOptions = (props) => {
     let mcqma = props.mcqma;
@@ -52,30 +44,44 @@ const RandomQuestion = (props) => {
     let opts = [];
     let type = props.type;
     console.log(mcqma);
-    if(type==="numerical"){
-        return (
-            <div className="singleOptionContainer">
-              <input className="inputText" type="text" placeholder="Write Your Answer Here...." name={qIndex}></input>
-              <button className="inputSubmit" type="submit">Mark</button>
-            </div>
-          );
-    }
-    else if (!mcqma) {
+    if (type === "numerical") {
+      return (
+        <div className="singleOptionContainer">
+          <input
+            className="inputText"
+            type="text"
+            placeholder="Write Your Answer Here...."
+            name={qIndex}
+          ></input>
+          <button className="inputSubmit" type="submit">
+            Mark
+          </button>
+        </div>
+      );
+    } else if (!mcqma) {
       opts = options.map((option, oIndex) => {
         return (
           <div className="singleOptionContainer" key={oIndex}>
-            <input className="inputRadio" type="radio" name={qIndex} value={option.option}></input>
+            <input
+              className="inputRadio"
+              type="radio"
+              name={qIndex}
+              value={option.option}
+            ></input>
             <span className="singleOptionText">{option.option}</span>
           </div>
         );
       });
-    } 
-    else 
-    {
+    } else {
       opts = options.map((option, oIndex) => {
         return (
           <div className="singleOptionContainer" key={oIndex}>
-            <input className="inputRadio" type="checkbox" name={qIndex} value={option.option}></input>
+            <input
+              className="inputRadio"
+              type="checkbox"
+              name={qIndex}
+              value={option.option}
+            ></input>
             <span className="singleOptionText">{option.option}</span>
           </div>
         );
@@ -90,31 +96,36 @@ const RandomQuestion = (props) => {
   if (randomQuestion.question !== undefined) {
     return (
       <div id="randomQuestionContainer">
-        <span className="examNameText">
-          {"EQAD " + randomQuestion.question.exam}
-        </span>
+        <div className="flex-row-start">
+          <span className="examNameText inlBlc grow">
+            {"EQAD " + randomQuestion.question.exam}
+          </span>
+          <div className="questionNavigationContainer inlBlc">
+            <button className="navButton" id="prevQuestionButton">{"<"}</button>
+            <button className="navButton" id="nextQuestionButton">{">"}</button>
+          </div>
+        </div>
+
         <div>
           <span className="questionNumberText">
             {"Question " + randomQuestion.question._startnumber}
           </span>
-          <ExamSection examSection={randomQuestion.question.examsection}/>
+          <ExamSection examSection={randomQuestion.question.examsection} />
         </div>
 
         <hr className="line"></hr>
         <div className="context justText">
           {randomQuestion.question.context}
         </div>
-        <ImageOutsideQuestionsArr images={randomQuestion.question.images}/>
+        <ImageOutsideQuestionsArr images={randomQuestion.question.images} />
 
         {randomQuestion.question.questions.map((question, qIndex) => {
           return (
             <div key={qIndex} className="singleQuestionContainer">
-            <ImageOutsideQuestionsArr images={question.images}/>
+              <ImageOutsideQuestionsArr images={question.images} />
               <div className="questionText">{question.question}</div>
-              {question.images.map((image)=>{
-                  return(
-                      <img></img>
-                  )
+              {question.images.map((image) => {
+                return <img></img>;
               })}
               <div>
                 <RenderInputTypeOptions
