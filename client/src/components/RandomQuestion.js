@@ -19,6 +19,10 @@ const RandomQuestion = (props) => {
     console.log(randomQuestionData.data);
   };
 
+  let handlePrevQuestionLoad = ()=>{
+      
+  }
+
   let ExamSection = (props) => {
     let examSection = props.examSection;
     if (examSection === undefined) return <span></span>;
@@ -101,8 +105,8 @@ const RandomQuestion = (props) => {
             {"EQAD " + randomQuestion.question.exam}
           </span>
           <div className="questionNavigationContainer inlBlc">
-            <button className="navButton" id="prevQuestionButton">{"<"}</button>
-            <button className="navButton" id="nextQuestionButton">{">"}</button>
+            <button className="navButton" id="prevQuestionButton" onClick={handlePrevQuestionLoad}>{"<"}</button>
+            <button className="navButton" id="nextQuestionButton" onClick={getRandomQuestionInfo}>{">"}</button>
           </div>
         </div>
 
