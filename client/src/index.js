@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './assets/styles/index.scss';
 import App from './components/App';
 import ExamInfo from './components/ExamInfo';
+import RandomQuestion from './components/RandomQuestion';
 import Header from './components/Header';
 import history from './services/historyService';
 import { Router, Switch, Route } from "react-router-dom";
@@ -13,6 +14,7 @@ const routing = (
     <Router history={history}>
       <Switch>
         <Route exact path="/" component={ExamInfo} />
+        <Route exact path="/random-question" component={RandomQuestion} />
       </Switch>
     </Router>
   </div>

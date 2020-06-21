@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ExamService from "../services/examService";
 import "../assets/styles/ExamInfo.scss";
+import history from '../services/historyService';
 
 const ExamInfo = () => {
   const [changeVar, setChangeVar] = useState(0);
@@ -17,10 +18,13 @@ const ExamInfo = () => {
   };
 
   const handleNavigateOnPage = (section)=>{
-    console.log(section);
     let newId = section+"Container";
-    console.log(newId);
     document.getElementById(newId).scrollIntoView();
+  }
+
+  const handleNavigateToRandomQuestion = (examId)=>{
+    console.log(examId);
+    history.push('/random-question', {examId:examId});
   }
 
   return (
@@ -56,7 +60,7 @@ const ExamInfo = () => {
               <div className="examsContainerWhole flex-row-start">
                 {stream.exams.map((exam, index) => {
                   return (
-                    <div className="singleExamContainer flex-row-start">
+                    <div className="singleExamContainer flex-row-start" onClick={()=>handleNavigateToRandomQuestion(exam._id)}>
                       <img className="examIcon" src={exam.logo}></img>
                       <div className="titleContentContainer flex-col-start">
                         <span className="examNameText">{exam.name}  Questions EQAD</span>
