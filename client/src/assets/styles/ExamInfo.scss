@@ -1,4 +1,4 @@
-#ExamInfoLinkContainer{
+#examInfoLinkContainer{
     margin: 2rem 5rem 0rem 5rem;
     flex-wrap: wrap;
 
@@ -19,7 +19,7 @@
             margin: 0rem auto 0rem auto;
         }
 
-        .streamExamsContainer{
+        .streamExamsContainerLink{
             margin: 1rem;
             padding: 1rem;
             flex-wrap: wrap;
@@ -45,4 +45,43 @@
         height: 3rem;
         width: 3rem;
     }
+}
+
+#examsContainer{
+    margin: 2rem 5rem 0rem 5rem;
+    .streamWiseExamContainer{
+        .streamNameText{
+            font-size: 1.5rem;
+        }
+        .examsContainerWhole{
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            .singleExamContainer{
+                margin: 1rem;
+                box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
+                padding: 1rem;
+                width: 35vw;
+
+                .examNameText{
+                    color: #2DC7A0;
+                    font-weight: 600;
+                    font-size: 1.25rem;
+                }
+                .examNameText2{
+                    color: #2DC7A0;
+                    font-weight: 300;
+                    margin: 0rem 0.25rem 0rem 0.25rem;
+                }
+                .titleContentContainer{
+                    margin: 1rem;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+}
+
+.examIcon{
+    height: 6rem;
+    width: 6rem;
 }
