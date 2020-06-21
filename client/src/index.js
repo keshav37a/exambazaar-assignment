@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/styles/index.scss';
-import App from './components/App';
 import ExamInfo from './components/ExamInfo';
 import RandomQuestion from './components/RandomQuestion';
 import Header from './components/Header';

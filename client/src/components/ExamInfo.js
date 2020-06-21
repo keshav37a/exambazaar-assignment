@@ -33,7 +33,7 @@ const ExamInfo = () => {
         {streams.map((stream, index) => {
           return (
             <div className="singleLinkContainer flex-col-start" onClick={()=>handleNavigateOnPage(stream.name.replace(/\s/g,''))}>
-              <img className="streamLogo" src={stream.logo.white}></img>
+              <img alt={stream.name+"Img"} className="streamLogo" src={stream.logo.white}></img>
               <span className="nameText streamNameText flex-row-center">
                 {stream.name}
               </span>
@@ -61,7 +61,7 @@ const ExamInfo = () => {
                 {stream.exams.map((exam, index) => {
                   return (
                     <div className="singleExamContainer flex-row-start" onClick={()=>handleNavigateToRandomQuestion(exam._id)}>
-                      <img className="examIcon" src={exam.logo}></img>
+                      <img alt={exam.name+"Img"} className="examIcon" src={exam.logo}></img>
                       <div className="titleContentContainer flex-col-start">
                         <span className="examNameText">{exam.name}  Questions EQAD</span>
                         <hr></hr>

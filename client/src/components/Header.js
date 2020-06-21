@@ -32,11 +32,11 @@ const Header = () => {
           <a href="https://www.exambazaar.com/">
             <span className="site-link-nav">+Write</span>
           </a>
-          <img
+          <img alt="searchIcon"
             className="icon"
             src="https://image.flaticon.com/icons/svg/483/483356.svg"
           ></img>
-          <img
+          <img alt="profileIcon"
             className="profile icon"
             src="https://image.flaticon.com/icons/svg/483/483361.svg"
           ></img>

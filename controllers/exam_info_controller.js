@@ -39,9 +39,10 @@ module.exports.randomQuestion = async (req, res) => {
   try {
     let randomQuestionURL = BASE_URL + "random-question/";
     let body = {};
+    console.log('req.body in randomQuestionController', req.params.body);
     body.api_key = API_KEY;
     body.api_secret = API_SECRET;
-    body.examId = req.body.examId;
+    body.examId = req.params.examId;
     if (req.body.questionId != undefined) 
         body.questionId = req.body.questionId;
 
