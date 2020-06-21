@@ -1,0 +1,37 @@
+#randomQuestionContainer{
+    margin: 2rem;
+
+    .context{
+        margin: 1rem 1rem 1rem 0rem;
+        line-height: 2rem;
+    }
+
+    .examNameText{
+        font-family: 'Nunito', sans-serif;
+        color: black;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    .line{
+        background-color: #2DC7A0;
+        height: 1px;
+    }
+
+    .questionText{
+        margin: 1rem 1rem 1rem 0rem;
+        line-height: 2rem;
+    }
+
+    .singleOptionContainer{
+        margin: 1rem 1rem 1rem 0rem;
+
+        .singleOptionText{
+            margin: 0rem 0rem 0rem 1rem;
+        }
+    }
+
+    .inputRadio{
+        border: 1px solid black;
+    }
+}

@@ -12,8 +12,8 @@ const ExamInfo = () => {
   }, [changeVar]);
 
   const getExamStreamInfo = async () => {
-    let streams = await ExamService.getAllStreamInfo();
-    setStreams(streams.data);
+    let streamsData = await ExamService.getAllStreamInfo();
+    setStreams(streamsData.data);
     console.log(streams);
   };
 
