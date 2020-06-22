@@ -148,7 +148,7 @@ const RandomQuestion = (props) => {
               <ImageOutsideQuestionsArr images={question.images} />
               <div className="questionText">{question.question}</div>
               {question.images.map((image) => {
-                return <img></img>;
+                return <img src={image}></img>;
               })}
               <div>
                 <RenderInputTypeOptions

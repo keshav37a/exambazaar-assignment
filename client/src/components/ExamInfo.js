@@ -32,7 +32,7 @@ const ExamInfo = () => {
       <div id="examInfoLinkContainer" className="flex-row-center">
         {streams.map((stream, index) => {
           return (
-            <div className="singleLinkContainer flex-col-start" onClick={()=>handleNavigateOnPage(stream.name.replace(/\s/g,''))}>
+            <div key={index} className="singleLinkContainer flex-col-start" onClick={()=>handleNavigateOnPage(stream.name.replace(/\s/g,''))}>
               <img alt={stream.name+"Img"} className="streamLogo" src={stream.logo.white}></img>
               <span className="nameText streamNameText flex-row-center">
                 {stream.name}
@@ -40,7 +40,7 @@ const ExamInfo = () => {
               <div className="streamExamsContainerLink flex-row-center">
                 {stream.exams.map((exam, index) => {
                   return (
-                    <div className="examNameContainerLink">
+                    <div key={index} className="examNameContainerLink">
                       <span className="nameText">{exam.name} | </span>
                     </div>
                   );
@@ -54,13 +54,13 @@ const ExamInfo = () => {
       <div id="examsContainer" className="flex-col-start">
         {streams.map((stream, index) => {
           return (
-            <div className="streamWiseExamContainer flex-col-start" id={stream.name.replace(/\s/g,'')+"Container"}>
+            <div key={index} className="streamWiseExamContainer flex-col-start" id={stream.name.replace(/\s/g,'')+"Container"}>
               <div className="streamNameText">{stream.name}</div>
               <hr></hr>
               <div className="examsContainerWhole flex-row-start">
                 {stream.exams.map((exam, index) => {
                   return (
-                    <div className="singleExamContainer flex-row-start" onClick={()=>handleNavigateToRandomQuestion(exam._id)}>
+                    <div key={index} className="singleExamContainer flex-row-start" onClick={()=>handleNavigateToRandomQuestion(exam._id)}>
                       <img alt={exam.name+"Img"} className="examIcon" src={exam.logo}></img>
                       <div className="titleContentContainer flex-col-start">
                         <span className="examNameText">{exam.name}  Questions EQAD</span>

@@ -1,5 +1,7 @@
 # Exambazaar Assignment
 
+This project uses nodejs and expressjs in the backend and react in the frontend. An api provided by exambazaar is used to fetch the list of exams and a random question for any of the exams.
+
 ## Setting Up The Backend
 
 Navigate to the project directory and install the following dependencies using `npm install <dependency>`
