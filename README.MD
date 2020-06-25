@@ -26,3 +26,7 @@ Use the command `npm run dev` to run the project.
 ## Demo Link
 
 `https://drive.google.com/file/d/10UQqHh_vyCwnD-v_6BgSwZVZdJLGtxBM/view?usp=sharing`
+
+## Deployed at
+
+`https://exambazaar.herokuapp.com/`
